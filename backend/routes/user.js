@@ -6,8 +6,9 @@ const { JWT_SECRET } = require("../config");
 const { authMiddleware } = require("../middleware");
 
 const router = express.Router();
-module.exports = router;
-
+router.get("/hello", async (req, res) => {
+  res.json({ message: "kya bolti public" });
+});
 // sign Up
 const signUpBody = zod.object({
   username: zod.string().email(),
@@ -126,3 +127,5 @@ router.get("/bulk", async (req, res) => {
     })),
   });
 });
+
+module.exports = router;

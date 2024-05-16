@@ -4,7 +4,6 @@ const { authMiddleware } = require("../middleware");
 const { default: mongoose } = require("mongoose");
 
 const router = express.Router();
-module.exports = router;
 
 router.get("/balance", authMiddleware, async (req, res) => {
   const account = await Account.findOne({
@@ -56,3 +55,5 @@ router.post("/transfer", authMiddleware, async (req, res) => {
     message: "Transfer successful",
   });
 });
+
+module.exports = router;

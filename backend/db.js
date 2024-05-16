@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  "mongodb+srv://1018hr:L1P4KyZLLfr1USZF@cluster0.ud8ar38.mongodb.net/"
-);
+mongoose.connect("mongodb://127.0.0.1:27017/paytm");
 // L1P4KyZLLfr1USZF
 // postgresql://test_owner:AzaHD24IVYON@ep-old-term-a16gxalq.ap-southeast-1.aws.neon.tech/test?sslmode=require
 const userSchema = new mongoose.Schema({
