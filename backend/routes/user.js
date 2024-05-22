@@ -44,7 +44,7 @@ router.post("/signup", async (req, res) => {
 
   const userId = user._id;
 
-  await Account.create({ userId, balance: 1 + Math.random * 10000 });
+  await Account.create({ userId, balance: 10000 });
 
   const token = jwt.sign(
     {
@@ -97,7 +97,7 @@ const updateBody = zod.object({
   lastName: zod.string().optional(),
 });
 
-router.put("/", authMiddleware, async (req, res) => {
+router.put("/update", authMiddleware, async (req, res) => {
   const { success } = updateBody.safeParse(req.body);
   if (!success) {
     return res.status(411).json({
